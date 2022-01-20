@@ -1,7 +1,11 @@
-import "./App.css";
+import TempCard from "./components/TempCard";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <TempCard />
+    </div>
+  );
 }
 
 export default App;
