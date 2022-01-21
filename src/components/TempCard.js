@@ -2,16 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./TempCard.css";
 // import CardMedia from "@mui/material/CardMedia";
 import Container from "@mui/material/Container";
-import rainy from "../assets/rainy.jpg";
-import brokenclouds from "../assets/broken_clouds.png";
-import clouds from "../assets/clouds.png";
 import mist from "../assets/mist.png";
-import rainy1 from "../assets/rainy1.png";
-import rainy2 from "../assets/rainy2.png";
-import scatteredclouds from "../assets/scattered_clouds.png";
-import snow from "../assets/snow.png";
-import sunny from "../assets/sunny.png";
-import thunderstorm from "../assets/thunderstorm.png";
 import Grid from "@mui/material/Grid";
 // import Paper from "@mui/material/Paper";
 
@@ -72,21 +63,40 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function TempCard() {
-  const [city, setcity] = useState(null);
-  const [textInput, setTextInput] = useState("howrah");
+  const api = {
+    key: "af59dbef9e8c89a00405d04bb91a49e9",
+    base: "https://api.openweathermap.org/data/2.5/",
+  };
 
-  useEffect(() => {
-    const api_key = "af59dbef9e8c89a00405d04bb91a49e9";
+  const [query, setQuery] = useState("");
+  const [weather, setWeather] = useState({});
 
-    const fetchApi = async () => {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${textInput}&appid=${api_key}`;
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data);
-    };
+  const search = (e) => {
+    if (e.key === "Enter") {
+      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+        .then((res) => res.json())
+        .then((result) => {
+          setWeather(result);
+          setQuery("");
+          console.log(result);
+        });
+    }
+  };
 
-    fetchApi();
-  }, []);
+  // let location = weather.name;
+  // let temp = weather.main.temp;
+  // let feels_like = weather.main.feels_like;
+  // let max_temp = weather.main.temp_max;
+  // let min_temp = weather.main.temp_min;
+  // let humidity = weather.main.humidity;
+  // let cloudiness = weather.clouds.all;
+  // let description = weather.weather[0].description;
+  // let icon = weather.weather[0].icon;
+  // let wind_speed = weather.wind.speed;
+
+  // let iconUrl = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
+
+  // console.log(iconUrl);
 
   return (
     <>
@@ -112,154 +122,119 @@ function TempCard() {
                   inputProps={{ "aria-label": "search" }}
                   onChange={(e) => {
                     let text = e.target.value;
-                    setTextInput(text);
-                    console.log(text);
+                    setQuery(text);
                   }}
+                  value={query}
+                  onKeyPress={search}
                 />
               </Search>
             </Toolbar>
           </AppBar>
         </Box>
       </Container>
-
       {/* card */}
-      <Container maxWidth="sm">
-        <div
-          style={{
-            margin: "0 auto",
-            marginTop: 10,
-            width: "100%",
-            height: "470px",
-            borderRadius: 10,
-            backgroundColor: "#fff",
-            boxShadow: " 1px 2px 10px rgba(0, 0, 0, 0.2)",
-            backgroundImage: `url(${sunny})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center center",
-          }}
-        >
-          <Grid container spacing={2} sx={{ marginTop: 2 }}>
-            <Grid item xs={6}>
-              <Typography variant="h2" sx={{ paddingLeft: 1, color: "white" }}>
-                Howrah
-              </Typography>
-              <span style={{ paddingLeft: 10, color: "white", fontSize: 25 }}>
-                Mostly Clear
-              </span>
-              <Typography
-                variant="subtitle2"
-                sx={{ paddingTop: 3, paddingLeft: 1, color: "white" }}
-              >
-                {`${Date()}`.slice(4, 15)}
-              </Typography>
+      {typeof weather.main != "undefined" ? (
+        <Container maxWidth="sm">
+          <div className="brokenCloud">
+            <Grid container spacing={2} sx={{ marginTop: 2 }}>
+              <Grid item xs={6}>
+                <Typography
+                  variant="h2"
+                  sx={{ paddingLeft: 1, color: "white" }}
+                >
+                  {weather.name}
+                </Typography>
+                <span style={{ paddingLeft: 10, color: "white", fontSize: 25 }}>
+                  {weather.weather[0].description}
+                </span>
+                <Typography
+                  variant="subtitle2"
+                  sx={{ paddingTop: 3, paddingLeft: 1, color: "white" }}
+                >
+                  {`${Date()}`.slice(4, 15)}
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+                {/* <img src={`url(${})`} alt="" /> */}
+              </Grid>
             </Grid>
-            <Grid item xs={6}>
-              <img src="#" alt="" />
-            </Grid>
-          </Grid>
 
-          <Typography
-            variant="h1"
-            sx={{
-              marginTop: 3.5,
-              fontSize: 70,
-              textAlign: "center",
-              color: "white",
-            }}
-          >
-            25°C
-          </Typography>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <Typography
-                variant="h5"
-                sx={{ textAlign: "center", color: "white" }}
-              >
-                Max 22°C
-              </Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography
-                variant="h5"
-                sx={{ textAlign: "center", color: "white" }}
-              >
-                Min 12°C
-              </Typography>
-            </Grid>
-          </Grid>
-          <div style={{ marginTop: 30, textAlign: "center" }}>
-            <WaterTwoToneIcon
-              sx={{ color: "white", fontSize: 15, marginRight: 2 }}
-            />
-            <span
-              style={{
-                fontSize: 25,
-                color: "whitesmoke",
-                marginBottom: 2,
+            <Typography
+              variant="h1"
+              sx={{
+                marginTop: 3.5,
+                fontSize: 70,
+                textAlign: "center",
+                color: "white",
               }}
             >
-              Humidity 61%
-            </span>
-            <br />
-            <DeviceThermostat
-              sx={{ color: "white", fontSize: 15, marginRight: 2 }}
-            />
-            <span
-              style={{ fontSize: 25, color: "whitesmoke", marginBottom: 2 }}
-            >
-              Feels like 22°C
-            </span>
-            <br />
-            <FilterDramaTwoToneIcon
-              sx={{ color: "white", fontSize: 15, marginRight: 2 }}
-            />
-            <span
-              style={{ fontSize: 25, color: "whitesmoke", marginBottom: 2 }}
-            >
-              Cloudiness 75%
-            </span>
-            <br />
-            <AirIcon sx={{ color: "white", fontSize: 15, marginRight: 2 }} />
-            <span
-              style={{ fontSize: 25, color: "whitesmoke", marginBottom: 5 }}
-            >
-              Speed 16.5 km/h
-            </span>
-          </div>
-
-          {/* <div style={{ marginTop: 30, textAlign: "center", marginLeft: 30 }}>
-            <Grid container spacing={2} sx={{ textAlign: "right" }}>
-              <Grid item xs={2}>
-                <Stack spacing={2}>
-                  <DeviceThermostat sx={{ color: "white", fontSize: 20 }} />
-                  <FilterDramaTwoToneIcon
-                    sx={{ color: "white", fontSize: 20 }}
-                  />
-                  <WaterTwoToneIcon sx={{ color: "white", fontSize: 20 }} />
-                  <AirIcon sx={{ color: "white", fontSize: 20 }} />
-                </Stack>
+              {weather.main.temp}°C
+            </Typography>
+            <Grid container spacing={2} sx={{ marginTop: 2 }}>
+              <Grid item xs={6}>
+                <Typography
+                  variant="h5"
+                  sx={{ textAlign: "center", color: "white" }}
+                >
+                  Max {weather.main.temp_max}°C
+                </Typography>
               </Grid>
-              <Grid item sx={2} sx={{ textAlign: "left" }}>
-                <Stack spacing={2}>
-                  <span style={{ color: "white", fontSize: 20 }}>
-                    Humidity 61%
-                  </span>
-                  <span style={{ color: "white", fontSize: 20 }}>
-                    Humidity 61%
-                  </span>
-                  <span style={{ color: "white", fontSize: 20 }}>
-                    Humidity 61%
-                  </span>
-                  <span style={{ color: "white", fontSize: 20 }}>
-                    Humidity 61%
-                  </span>
-                </Stack>
+              <Grid item xs={6}>
+                <Typography
+                  variant="h5"
+                  sx={{ textAlign: "center", color: "white" }}
+                >
+                  Min {weather.main.temp_min}°C
+                </Typography>
               </Grid>
             </Grid>
-          </div> */}
-        </div>
-      </Container>
+            <div style={{ marginTop: 30, textAlign: "center" }}>
+              <WaterTwoToneIcon
+                sx={{ color: "white", fontSize: 15, marginRight: 2 }}
+              />
+              <span
+                style={{
+                  fontSize: 25,
+                  color: "whitesmoke",
+                  marginBottom: 2,
+                }}
+              >
+                Humidity {weather.main.humidity}%
+              </span>
+              <br />
+              <DeviceThermostat
+                sx={{ color: "white", fontSize: 15, marginRight: 2 }}
+              />
+              <span
+                style={{ fontSize: 25, color: "whitesmoke", marginBottom: 2 }}
+              >
+                Feels like {weather.main.feels_like}C
+              </span>
+              <br />
+
+              <FilterDramaTwoToneIcon
+                sx={{ color: "white", fontSize: 15, marginRight: 2 }}
+              />
+              <span
+                style={{ fontSize: 25, color: "whitesmoke", marginBottom: 2 }}
+              >
+                Cloudiness {weather.clouds.all}%
+              </span>
+              <br />
+              <AirIcon sx={{ color: "white", fontSize: 15, marginRight: 2 }} />
+              <span
+                style={{ fontSize: 25, color: "whitesmoke", marginBottom: 5 }}
+              >
+                Speed {weather.wind.speed} km/h
+              </span>
+            </div>
+          </div>
+        </Container>
+      ) : (
+        <p style={{ fontSize: 25, color: "white", textAlign: "center" }}>
+          Enter a valid location
+        </p>
+      )}
     </>
   );
 }
