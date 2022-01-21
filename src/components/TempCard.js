@@ -98,6 +98,47 @@ function TempCard() {
 
   // console.log(iconUrl);
 
+  let iconUrl = "";
+  if (typeof weather.main != "undefined") {
+    iconUrl += `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
+  }
+
+  let classes = [];
+
+  if (typeof weather.main != "undefined") {
+    let value = weather.weather[0].description;
+
+    if (value === "broken clouds") {
+      classes.push("brokenCloud");
+    } else if (value === "clear sky") {
+      classes.push("clearSky");
+    } else if (value === "few clouds") {
+      classes.push("fewClouds");
+    } else if (value === "mist") {
+      classes.push("mist");
+    } else if (value === "rain") {
+      classes.push("rain");
+    } else if (value === "scattered clouds") {
+      classes.push("scatteredClouds");
+    } else if (value === "shower rain") {
+      classes.push("showerRain");
+    } else if (value === "snow") {
+      classes.push("snowWeather");
+    } else if (value === "thunderstorm") {
+      classes.push("thunderStorm");
+    } else if (value === "haze") {
+      classes.push("haze");
+    } else if (value === "fog") {
+      classes.push("fog");
+    } else if (value === "smoke") {
+      classes.push("smoke");
+    } else if (value === "drizzle") {
+      classes.push("drizzle");
+    } else {
+      classes.push("card");
+    }
+  }
+
   return (
     <>
       {/* navbar */}
@@ -135,7 +176,7 @@ function TempCard() {
       {/* card */}
       {typeof weather.main != "undefined" ? (
         <Container maxWidth="sm">
-          <div className="brokenCloud">
+          <div className={classes}>
             <Grid container spacing={2} sx={{ marginTop: 2 }}>
               <Grid item xs={6}>
                 <Typography
@@ -155,7 +196,12 @@ function TempCard() {
                 </Typography>
               </Grid>
               <Grid item xs={6}>
-                {/* <img src={`url(${})`} alt="" /> */}
+                <img
+                  src={`url(${iconUrl})`}
+                  // src=""
+                  // // `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
+                  alt=""
+                />
               </Grid>
             </Grid>
 
