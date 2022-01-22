@@ -18,6 +18,7 @@ import AirIcon from "@mui/icons-material/Air";
 import DeviceThermostat from "@mui/icons-material/DeviceThermostat";
 import FilterDramaTwoToneIcon from "@mui/icons-material/FilterDramaTwoTone";
 import WaterTwoToneIcon from "@mui/icons-material/WaterTwoTone";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 // import Stack from "@mui/material/Stack";
 
 const Search = styled("div")(({ theme }) => ({
@@ -139,38 +140,50 @@ function TempCard() {
     }
   }
 
+  const darkTheme = createTheme({
+    palette: {
+      mode: "dark",
+      primary: {
+        main: "#1976d2",
+      },
+    },
+  });
+
   return (
     <>
       {/* navbar */}
+
       <Container maxWidth="sm" sx={{ marginTop: 2 }}>
         <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static">
-            <Toolbar>
-              <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-              >
-                Weathery
-              </Typography>
-              <Search>
-                <SearchIconWrapper>
-                  <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
-                  placeholder="Search…"
-                  inputProps={{ "aria-label": "search" }}
-                  onChange={(e) => {
-                    let text = e.target.value;
-                    setQuery(text);
-                  }}
-                  value={query}
-                  onKeyPress={search}
-                />
-              </Search>
-            </Toolbar>
-          </AppBar>
+          <ThemeProvider theme={darkTheme}>
+            <AppBar position="static">
+              <Toolbar>
+                <Typography
+                  variant="h6"
+                  noWrap
+                  component="div"
+                  sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+                >
+                  Weathery
+                </Typography>
+                <Search>
+                  <SearchIconWrapper>
+                    <SearchIcon />
+                  </SearchIconWrapper>
+                  <StyledInputBase
+                    placeholder="Search…"
+                    inputProps={{ "aria-label": "search" }}
+                    onChange={(e) => {
+                      let text = e.target.value;
+                      setQuery(text);
+                    }}
+                    value={query}
+                    onKeyPress={search}
+                  />
+                </Search>
+              </Toolbar>
+            </AppBar>
+          </ThemeProvider>
         </Box>
       </Container>
       {/* card */}
