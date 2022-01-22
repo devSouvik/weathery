@@ -99,11 +99,6 @@ function TempCard() {
 
   // console.log(iconUrl);
 
-  let iconUrl = "";
-  if (typeof weather.main != "undefined") {
-    iconUrl += `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
-  }
-
   let classes = [];
 
   if (typeof weather.main != "undefined") {
@@ -135,6 +130,8 @@ function TempCard() {
       classes.push("smoke");
     } else if (value === "drizzle") {
       classes.push("drizzle");
+    } else if (value === "overcast clouds") {
+      classes.push("overcastCloud");
     } else {
       classes.push("card");
     }
@@ -209,12 +206,9 @@ function TempCard() {
                 </Typography>
               </Grid>
               <Grid item xs={6}>
-                <img
-                  src={`url(${iconUrl})`}
-                  // src=""
-                  // // `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
-                  alt=""
-                />
+                {/* <img src={`url(${iconUrl})`} alt="" /> */}
+                {/* {`url(${iconUrl})`} */}
+                {/* <div className={}></div> */}
               </Grid>
             </Grid>
 
