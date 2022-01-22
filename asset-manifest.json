@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/weathery/static/css/main.eed8bae2.css",
+    "main.js": "/weathery/static/js/main.c8b92e84.js",
+    "static/js/787.2a0a1791.chunk.js": "/weathery/static/js/787.2a0a1791.chunk.js",
+    "static/media/drizzle.png": "/weathery/static/media/drizzle.5816d4940f06331bd29b.png",
+    "static/media/shower_rain.png": "/weathery/static/media/shower_rain.6f021e613d30fe96127f.png",
+    "static/media/fog.png": "/weathery/static/media/fog.8fe4e19f0a0616767c15.png",
+    "static/media/mist.png": "/weathery/static/media/mist.badc5f20a30b0de0054a.png",
+    "static/media/rainy1.png": "/weathery/static/media/rainy1.483b0428c727b86ad7b4.png",
+    "static/media/smoke.png": "/weathery/static/media/smoke.1ecac0f8b14760f79b3d.png",
+    "static/media/haze.png": "/weathery/static/media/haze.660c2e5c2972e2555d6a.png",
+    "static/media/scattered_clouds.png": "/weathery/static/media/scattered_clouds.09fc7448ac23a41e4737.png",
+    "static/media/few_clouds.png": "/weathery/static/media/few_clouds.24b3cb9da9c882fdc038.png",
+    "static/media/clear_sky.png": "/weathery/static/media/clear_sky.ef49537d4e1362063f0c.png",
+    "static/media/thunderstorm.png": "/weathery/static/media/thunderstorm.b71fe2bd53eaf3003bcc.png",
+    "static/media/broken_clouds.png": "/weathery/static/media/broken_clouds.9c2c1cc5e6bf088d7869.png",
+    "static/media/snow.png": "/weathery/static/media/snow.38d94b8f9f98f2cd34a3.png",
+    "static/media/rain.jpg": "/weathery/static/media/rain.cfed11969f190617088c.jpg",
+    "index.html": "/weathery/index.html",
+    "main.eed8bae2.css.map": "/weathery/static/css/main.eed8bae2.css.map",
+    "main.c8b92e84.js.map": "/weathery/static/js/main.c8b92e84.js.map",
+    "787.2a0a1791.chunk.js.map": "/weathery/static/js/787.2a0a1791.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eed8bae2.css",
+    "static/js/main.c8b92e84.js"
+  ]
+}
