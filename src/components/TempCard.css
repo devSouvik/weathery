@@ -7,7 +7,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/rainy1.png);
+  background-image: url(../assets/rainy1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -22,7 +22,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/broken_clouds.png);
+  background-image: url(../assets/broken_clouds.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -37,7 +37,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/clear_sky.png);
+  background-image: url(../assets/clear_sky.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -52,7 +52,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/few_clouds.png);
+  background-image: url(../assets/few_clouds.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -67,7 +67,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/mist.png);
+  background-image: url(../assets/mist.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -97,7 +97,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/scattered_clouds.png);
+  background-image: url(../assets/scattered_clouds.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -112,7 +112,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/shower_rain.png);
+  background-image: url(../assets/shower_rain.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -127,7 +127,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/snow.png);
+  background-image: url(../assets/snow.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -142,7 +142,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/thunderstorm.png);
+  background-image: url(../assets/thunderstorm.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -156,7 +156,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/haze.png);
+  background-image: url(../assets/haze.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -170,7 +170,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
-  background-image: url(../assets/fog.png);
+  background-image: url(../assets/fog.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -185,7 +185,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/smoke.png);
+  background-image: url(../assets/smoke.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -199,7 +199,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/drizzle.png);
+  background-image: url(../assets/drizzle.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -213,7 +213,7 @@
   border-radius: 15px;
   background-color: "#fff";
   box-shadow: 1px 2px 10px rgba(136, 135, 135, 0.2);
-  background-image: url(../assets/overcast.png);
+  background-image: url(../assets/overcast.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./TempCard.css";
 // import CardMedia from "@mui/material/CardMedia";
 import Container from "@mui/material/Container";
-import mist from "../assets/mist.png";
+import mist from "../assets/mist.jpg";
 import Grid from "@mui/material/Grid";
 // import Paper from "@mui/material/Paper";
 
