@@ -190,7 +190,7 @@ function TempCard() {
         <Container maxWidth="sm">
           <div className={classes}>
             <Grid container spacing={2} sx={{ marginTop: 2 }}>
-              <Grid item xs={6}>
+              <Grid item xs={8}>
                 <Typography
                   variant="h2"
                   sx={{ paddingLeft: 1, color: "white" }}
@@ -213,10 +213,12 @@ function TempCard() {
                   {`${Date()}`.slice(4, 15)}
                 </Typography>
               </Grid>
-              <Grid item xs={6}>
-                {/* <img src={`url(${iconUrl})`} alt="" /> */}
-                {/* {`url(${iconUrl})`} */}
-                {/* <div className={}></div> */}
+              <Grid item xs={4}>
+                <img
+                  style={{ marginTop: "30px", marginLeft: 15 }}
+                  src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                  alt="weather image"
+                />
               </Grid>
             </Grid>
 

@@ -1,5 +1,6 @@
 .card {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   padding-bottom: 2;
   margin-top: 10;
@@ -16,6 +17,7 @@
 
 .brokenCloud {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
@@ -31,6 +33,7 @@
 
 .clearSky {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
@@ -46,6 +49,7 @@
 
 .fewClouds {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
@@ -61,6 +65,7 @@
 
 .mist {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
@@ -76,6 +81,7 @@
 
 .rain {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
@@ -91,6 +97,7 @@
 
 .scatteredClouds {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   padding-bottom: 10px;
   margin: 0 auto;
   margin-top: 10;
@@ -107,6 +114,7 @@
 
 .showerRain {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
@@ -122,6 +130,7 @@
 
 .snowWeather {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
@@ -137,6 +146,7 @@
 
 .thunderStorm {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
@@ -151,6 +161,7 @@
 }
 .haze {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
@@ -165,6 +176,7 @@
 }
 .fog {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
@@ -180,6 +192,7 @@
 
 .smoke {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
@@ -194,6 +207,7 @@
 }
 .drizzle {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
@@ -208,6 +222,7 @@
 }
 .overcastCloud {
   background-color: rgb(29, 29, 29);
+  margin-bottom: 20px;
   margin: 0 auto;
   margin-top: 10;
   width: 100%;
