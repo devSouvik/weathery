@@ -20,6 +20,8 @@ import FilterDramaTwoToneIcon from "@mui/icons-material/FilterDramaTwoTone";
 import WaterTwoToneIcon from "@mui/icons-material/WaterTwoTone";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 // import Stack from "@mui/material/Stack";
+import ArrowUpwardRoundedIcon from "@mui/icons-material/ArrowUpwardRounded";
+import ArrowDownwardRoundedIcon from "@mui/icons-material/ArrowDownwardRounded";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -223,25 +225,68 @@ function TempCard() {
             >
               {weather.main.temp}°C
             </Typography>
-            <Grid container spacing={2} sx={{ marginTop: 2 }}>
+            <Grid container spacing={2} sx={{ marginTop: 5 }}>
               <Grid item xs={6}>
                 <Typography
                   variant="h5"
-                  sx={{ textAlign: "center", color: "white" }}
+                  sx={{ textAlign: "left", color: "white", marginLeft: 2 }}
                 >
+                  <ArrowUpwardRoundedIcon sx={{ fontSize: 18 }} />
                   Max {weather.main.temp_max}°C
                 </Typography>
               </Grid>
               <Grid item xs={6}>
                 <Typography
                   variant="h5"
-                  sx={{ textAlign: "center", color: "white" }}
+                  sx={{ textAlign: "left", color: "white", marginLeft: 2 }}
                 >
+                  <ArrowDownwardRoundedIcon sx={{ fontSize: 18 }} />
                   Min {weather.main.temp_min}°C
                 </Typography>
               </Grid>
+              <Grid item xs={6}>
+                <Typography
+                  variant="h5"
+                  sx={{ textAlign: "left", color: "white", marginLeft: 2 }}
+                >
+                  <WaterTwoToneIcon sx={{ color: "white", fontSize: 18 }} />
+                  Humidity {weather.main.humidity}%
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography
+                  variant="h5"
+                  sx={{ textAlign: "left", color: "white", marginLeft: 2 }}
+                >
+                  <DeviceThermostat sx={{ color: "white", fontSize: 18 }} />
+                  Feels Like {weather.main.feels_like}°C
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography
+                  variant="h5"
+                  sx={{ textAlign: "left", color: "white", marginLeft: 2 }}
+                >
+                  <FilterDramaTwoToneIcon
+                    sx={{ color: "white", fontSize: 15, marginRight: 1 }}
+                  />
+                  Cloudiness {weather.clouds.all}%
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography
+                  variant="h5"
+                  sx={{ textAlign: "left", color: "white", marginLeft: 2 }}
+                >
+                  <AirIcon
+                    sx={{ color: "white", fontSize: 15, marginRight: 1 }}
+                  />
+                  Speed {weather.main.temp_min}Km/h
+                </Typography>
+              </Grid>
             </Grid>
-            <div style={{ marginTop: 30, textAlign: "center" }}>
+
+            {/* <div style={{ marginTop: 30, textAlign: "center" }}>
               <WaterTwoToneIcon
                 sx={{ color: "white", fontSize: 15, marginRight: 2 }}
               />
@@ -280,7 +325,7 @@ function TempCard() {
               >
                 Speed {weather.wind.speed} km/h
               </span>
-            </div>
+            </div> */}
           </div>
         </Container>
       ) : (
