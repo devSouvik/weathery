@@ -231,7 +231,7 @@ function TempCard() {
             >
               {weather.main.temp}°C
             </Typography>
-            <Grid container spacing={2} sx={{ marginTop: 5 }}>
+            <Grid container spacing={2} sx={{ marginTop: 3 }}>
               <Grid item xs={6}>
                 <Typography
                   variant="h5"
