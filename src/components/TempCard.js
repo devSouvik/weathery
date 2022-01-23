@@ -197,12 +197,18 @@ function TempCard() {
                 >
                   {weather.name}
                 </Typography>
-                <span style={{ paddingLeft: 10, color: "white", fontSize: 25 }}>
+                <Typography
+                  style={{ paddingLeft: 10, color: "white", fontSize: 25 }}
+                >
                   {weather.weather[0].description}
-                </span>
+                </Typography>
                 <Typography
                   variant="subtitle2"
-                  sx={{ paddingTop: 3, paddingLeft: 1, color: "white" }}
+                  sx={{
+                    paddingTop: 3,
+                    paddingLeft: 1,
+                    color: "white",
+                  }}
                 >
                   {`${Date()}`.slice(4, 15)}
                 </Typography>
