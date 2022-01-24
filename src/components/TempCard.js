@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./TempCard.css";
+import GeoCard from "./GeoCard";
 // import CardMedia from "@mui/material/CardMedia";
 import Container from "@mui/material/Container";
 import mist from "../assets/mist.jpg";
@@ -22,6 +23,8 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 // import Stack from "@mui/material/Stack";
 import ArrowUpwardRoundedIcon from "@mui/icons-material/ArrowUpwardRounded";
 import ArrowDownwardRoundedIcon from "@mui/icons-material/ArrowDownwardRounded";
+import IconButton from "@mui/material/IconButton";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -66,6 +69,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function TempCard() {
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      document.write("Geolocation is not supported by this browser.");
+    }
+  }
+
+  function showPosition(position) {
+    console.log("latitite", position.coords.latitude);
+    console.log("longitude", position.coords.longitude);
+  }
+
   const api = {
     key: "af59dbef9e8c89a00405d04bb91a49e9",
     base: "https://api.openweathermap.org/data/2.5/",
@@ -81,25 +97,9 @@ function TempCard() {
         .then((result) => {
           setWeather(result);
           setQuery("");
-          console.log(result);
         });
     }
   };
-
-  // let location = weather.name;
-  // let temp = weather.main.temp;
-  // let feels_like = weather.main.feels_like;
-  // let max_temp = weather.main.temp_max;
-  // let min_temp = weather.main.temp_min;
-  // let humidity = weather.main.humidity;
-  // let cloudiness = weather.clouds.all;
-  // let description = weather.weather[0].description;
-  // let icon = weather.weather[0].icon;
-  // let wind_speed = weather.wind.speed;
-
-  // let iconUrl = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
-
-  // console.log(iconUrl);
 
   let classes = [];
 
@@ -157,6 +157,16 @@ function TempCard() {
           <ThemeProvider theme={darkTheme}>
             <AppBar position="static">
               <Toolbar>
+                <IconButton
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="open drawer"
+                  sx={{ mr: 2 }}
+                  onClick={getLocation}
+                >
+                  <LocationOnIcon />
+                </IconButton>
                 <Typography
                   variant="h6"
                   noWrap
@@ -293,47 +303,6 @@ function TempCard() {
                 </Typography>
               </Grid>
             </Grid>
-
-            {/* <div style={{ marginTop: 30, textAlign: "center" }}>
-              <WaterTwoToneIcon
-                sx={{ color: "white", fontSize: 15, marginRight: 2 }}
-              />
-              <span
-                style={{
-                  fontSize: 25,
-                  color: "whitesmoke",
-                  marginBottom: 2,
-                }}
-              >
-                Humidity {weather.main.humidity}%
-              </span>
-              <br />
-              <DeviceThermostat
-                sx={{ color: "white", fontSize: 15, marginRight: 2 }}
-              />
-              <span
-                style={{ fontSize: 25, color: "whitesmoke", marginBottom: 2 }}
-              >
-                Feels like {weather.main.feels_like}C
-              </span>
-              <br />
-
-              <FilterDramaTwoToneIcon
-                sx={{ color: "white", fontSize: 15, marginRight: 2 }}
-              />
-              <span
-                style={{ fontSize: 25, color: "whitesmoke", marginBottom: 2 }}
-              >
-                Cloudiness {weather.clouds.all}%
-              </span>
-              <br />
-              <AirIcon sx={{ color: "white", fontSize: 15, marginRight: 2 }} />
-              <span
-                style={{ fontSize: 25, color: "whitesmoke", marginBottom: 5 }}
-              >
-                Speed {weather.wind.speed} km/h
-              </span>
-            </div> */}
           </div>
         </Container>
       ) : (
